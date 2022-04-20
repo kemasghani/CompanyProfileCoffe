@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.header {
+    animation: awal 2s;
+}
+
+@keyframes awal {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.choose {
+    opacity: 0.8;
+}
+
+.youtubeCon {
+    margin-top: 100px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+p.tittleMenu {
+    font-family: 'Ramaraja', serif;
+    text-align: center;
+    font-size: 70px;
+}
+
+.youtube {
+    background-color: rgb(255, 248, 226);
+    border: 4px solid rgb(255, 248, 226);
+    width: 80%;
+    height: 500px;
+}
+
+.language {
+    font-family: "Roboto", sans-serif;
+    padding-left: 40px;
+}
+
+.select-box {
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+
+}
+
+.select-box .options-container {
+    background: #2f3640;
+    color: #f5f6fa;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+}
+
+.selected {
+    background: #2f3640;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #f5f6fa;
+    position: relative;
+    order: 0;
+}
+
+.selected::after {
+    content: "";
+    background: url("foto/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 10px;
+    transition: all 0.4s;
+}
+
+.select-box .options-container.active {
+    z-index: 6;
+    max-height: 240px;
+    opacity: 1;
+}
+
+.select-box .options-container.active+.selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+    width: 8px;
+    background: #0d141f;
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+    background: #525861;
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .option,
+.selected {
+    padding: 12px 9px;
+    cursor: pointer;
+}
+
+.select-box .option:hover {
+    background: #414b57;
+}
+
+.select-box label {
+    cursor: pointer;
+    padding-right: 15px;
+}
+
+.label {
+    opacity: 0.8;
+    font-size: 16px;
+}
+
+span {
+    display: flex;
+    align-items: center;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+
+.menu {
+    width: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    color: rgb(255, 254, 254);
+    border: 1px solid rgb(47, 99, 7);
+    border-radius: 20px;
+    margin: 0px auto 100px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.menu:hover {
+    opacity: 0.7;
+}
+
+p.tittleMenu {
+    margin-top: 50px;
+    font-family: 'Ramaraja', serif;
+    text-align: center;
+    font-size: 70px;
+}
+
+nav {
+    background-color: white;
+    padding: 15px 30px 10px;
+    border-bottom: 1px solid rgb(19, 145, 25);
+
+}
+
+.menuNav {
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.map a {
+    text-decoration: none;
+    color: black;
+}
+
+.map a:hover {
+    color: rgb(19, 145, 25);
+    cursor: pointer;
+}
+
+nav .menuNav ul li a:hover {
+    color: rgb(19, 145, 25);
+}
+
+.main {
+    margin-top: 15px;
+}
+
+.text {
+    font-family: 'Playfair Display', serif;
+    color: rgb(81, 81, 81);
+    font-size: 25px;
+    text-align: center;
+    padding: 130px 20px 50px;
+    position: relative;
+    z-index: -2;
+}
+
+.text2 {
+    padding-top: 30px;
+    color: black;
+}
+
+.logoDekstop {
+    width: 170px;
+    height: 110px;
+}
+
+.sosmed {
+    display: none;
+    padding-right: 10px;
+    width: 100%;
+
+}
+
+.wa {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 5px;
+    width: 100%;
+}
+
+.ig {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 5px;
+    width: 100%;
+}
+
+.ig:hover, .wa:hover {
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.logoSosmed {
+    margin-right: 8px;
+}
+
+.navBaru {
+    display: flex;
+    column-gap: 40px;
+    font-size: 25px;
+}
+
+/* hamburger menu */
+.logo {
+    width: 70px;
+}
+
+.mapImage {
+    width: 20px;
+}
+
+.mapImage1 {
+    width: 20px;
+}
+
+.map {
+    font-size: 10px;
+}
+
+.liMapImage1:hover {
+    cursor: pointer;
+}
+
+.liMapImage1 {
+    display: flex;
+    font-size: 15px;
+    column-gap: 8px;
+}
+
+.navMobile {
+    display: none;
+}
+
+.menuToggle {
+    position: relative;
+    display: none;
+
+}
+
+footer {
+    width: 100%;
+    padding: 0 7% 0;
+    height: 300px;
+    background-color: #F7F7F7;
+    border: 2px solid rgb(19, 145, 25);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 150px;
+}
+
+footer .right {
+    display: flex;
+    column-gap: 50px;
+    height: 190px;
+    padding-top: 12px;
+}
+
+.leftLogo {
+    width: 297px;
+}
+
+footer .tittle {
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 25px;
+    color: black;
+}
+
+footer .link {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    height: 80%;
+    font-size: 19px;
+    font-weight: 400;
+    width: 300px;
+}
+
+
+
+footer .link a {
+    color: black;
+    text-decoration: none;
+}
+
+footer .link a:hover {
+    opacity: 0.5;
+}
+
+footer .logoSosmed {
+    padding-right: 8px;
+}
+
+footer .ig {
+    width: 55px;
+}
+
+footer .ig:hover, footer .grab:hover, footer .was:hover {
+    opacity: 0.7;
+}
+
+footer .grab {
+    width: 50px;
+}
+
+footer .was {
+    width: 54px;
+    padding-right: 12px;
+}
+
+.slider {
+    margin: auto;
+    width: 70%;
+}
+
+/* responsive design */
+@media screen and (max-width: 1000px) {
+    footer {
+        flex-direction: column;
+        height: 550px;
+        padding: 20px 8% 80px;
+    }
+
+    footer .was {
+        width: 57px;
+    }
+
+    footer .grab {
+        width: 55px;
+    }
+
+    footer .ig {
+        width: 55px;
+    }
+
+    .leftLogo {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    footer {
+        flex-direction: column;
+        height: 100%;
+        padding: 20px 8% 80px;
+    }
+
+    footer .right {
+        display: flex;
+        column-gap: 50px;
+        height: 300px;
+        padding-top: 40px;
+    }
+
+    footer .link {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        height: 80%;
+        font-size: 16px;
+        font-weight: 400;
+        width: 250px;
+    }
+
+    .leftLogo {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    footer {
+        flex-direction: column;
+        padding: 20px 8% 80px;
+    }
+
+    footer .right {
+        display: flex;
+        justify-content: center;
+        column-gap: 30px;
+        height: 300px;
+        padding-top: 60px;
+    }
+
+    footer .tittle {
+        font-size: 20px;
+    }
+
+    footer .link {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        height: 100%;
+        font-size: 16px;
+        font-weight: 400;
+        width: 150px;
+    }
+
+    .text {
+        margin-top: 90px;
+        margin-bottom: 80px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .menu {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .text {
+        font-size: 20px;
+    }
+
+    p.tittleMenu {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 982px) {
+
+    /* ul li{
+        display: none;
+    } */
+    .logoDekstop {
+        display: none;
+    }
+
+    nav {
+        position: relative;
+        padding: 15px 20px;
+        z-index: 5;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 23px;
+        padding-right: 8px;
+        margin-top: 80px;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        flex-direction: column;
+        background-color: white;
+        border: 1px solid rgb(47, 99, 7);
+        height: 82vh;
+        z-index: 1;
+        justify-content: start;
+        width: 60%;
+        transform: translateX(-100%);
+        transition: all 1s;
+        color: white;
+        border-radius: 0px 10px 20px 0px;
+        row-gap: 20px;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul.slide {
+        transform: translateX(0%)
+    }
+
+    .navMobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menuToggle {
+        display: flex;
+    }
+
+    .slider {
+        width: 100%;
+    }
+
+    .sosmed {
+        display: flex;
+        flex-direction: column;
+        row-gap: 13px;
+        color: black;
+        padding-bottom: 12px;
+    }
+
+    .liMapImage1 {
+        display: none;
+    }
+
+    .navBaru {
+        display: flex;
+        flex-direction: column;
+        row-gap: 18px;
+    }
+
+    .navBaru a {
+        font-size: 18px;
+    }
+
+    .navBaru .hubungi {
+        display: none;
+    }
+
+    .language {
+        padding-left: 0;
+    }
+
+    .choose {
+        opacity: 0.5;
+        color: black;
+    }
+}
